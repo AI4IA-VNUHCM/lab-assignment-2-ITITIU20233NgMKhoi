@@ -19,19 +19,21 @@ int main(int argc, char *argv[]) {
 	float distance = atof(argv[1]);
 	int result;
 	//Your codes here
-int next, extra;
-	 if (distance <= 2) {
+printf("Enter distance in kilometer:");
+	scanf("%f",&distance);
+	// scanf("%d",&result);
+	if (distance < 2)
+	{
 		result = 15000;
 	}
-	else if (distance >2) {
-		next =distance -2;
-		result = 15000 + ((next/0.25) * 2000);
+	else if (2 < distance && distance < 30)
+	{
+		result = 15000 + (distance - 2)*4*2000;
 	}
-	else if (distance >= 30) {
-		extra =distance - 30;
-		result = 15000 + (112*2000) + (extra*5000);
+	else if (distance > 30)
+	{
+		result = 15000 + 28*4*2000 + 5000 * (distance - 30);
 	}
-	
 	printf("%d", result);
 	return 0;
 }
